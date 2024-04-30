@@ -2,12 +2,12 @@
 import Intro from "./app/intro.mdx"
 
 const siteData: any = {
-    author: "yuanli",  // author name
-    title: "NextBlog", // website title
-    description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css", // website description
+    author: "Arthur",  // author name
+    title: "ArthDev", // website title
+    description: "Um blog minimalista para artigos e meu desenvolvimento pessoal como desenvolvedor", // website description
     theme: "light", // light | dark
-    language: "zh-CN", // zh-CN | en
-    githubRepo: "https://github.com/imyuanli/next-blog", // your blog's github repo
+    language: "pt-BR", // zh-CN | en
+    githubRepo: "https://github.com/arthcc/arth.dev", // your blog's github repo
 
     // how to change the favicon of the website?
     // change the app/favicon.ico file directly，or refer to the document below
@@ -16,31 +16,35 @@ const siteData: any = {
     //header config
     header: {
         logo: "/logo.png",  //  /public/logo.png
-        title: "NextBlog", // header title
+        title: "ArthDev", // header title
 
         // navigation bar
         routes: [
             {
-                name: 'Blog',
+                name: 'Artigos',
                 value: '/blog'
             },
             {
-                name: 'Projects',
+                name: 'Projetos',
                 value: '/projects'
+            },
+
+            {
+                name: 'Currículo',
+                value: 'https://drive.google.com/file/d/1QPnp7UNJG0mgc-JLTGCvz61p6UN_FtHo/view?usp=sharing'
             }
         ]
     },
 
     home: {
-        title: "Welcome to NextBlog",
+        title: "Bem vindo ao ArthDev",
 
         // introduction or about me
         intro: Intro, // file path of the introduction
         socials: {
-            email: "286547316@qq.com",
-            github: "https://github.com/imyuanli",
-            twitter: "https://twitter.com",
-            linkedin: "",
+            email: "arthurdaconceicaocunha@gmail.com",
+            github: "https://github.com/arthcc",
+            linkedin: "linkedin.com/in/arthcc",
             facebook: "",
             instagram: "",
             youtube: "",
@@ -48,13 +52,13 @@ const siteData: any = {
     },
 
     blog: {
-        title: 'My Blog',
-        description: 'All of my long-fesign, and more, collected in chronological order.'
+        title: 'Meu blog',
+        description: 'Toda a minha vida tech, documentada'
     },
 
     project: {
-        title: "Look what I've done",
-        description: "Some small tools made by oneself",
+        title: "O que eu tenho feito/contribuido",
+        description: "Um resumo de todos os projetos e de participacoes ativas na comunidade Tech ao longo dos anos",
 
         // name, description, link are required
         // github: the address of the project's github repo
@@ -63,30 +67,19 @@ const siteData: any = {
         // you can add more fields according to your needs ,but you need to modify the code in the projects/page.tsx file
         projects: [
             {
-                name: "NextBlog",
-                description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
-                link: "https://imyuanli.vercel.app/",
-                status: "active",
-            },
-            {
-                name: "NextBlog",
-                description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
-                link: "https://next-blog-imyuanli.vercel.app/",
-                github: "https://github.com/imyuanli/next-blog",
-                status: "bug",
-            },
-            {
-                name: "NextBlog",
-                description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
-                link: "https://next-blog-imyuanli.vercel.app/",
-                status: "inactive",
-            },
-            {
-                name: "NextBlog",
-                description: "A minimalist blog created with Next.js ,Shadcn-ui and Tailwind.css",
-                link: "https://next-blog-imyuanli.vercel.app/",
+                name: "DentalDash",
+                description: "UM ERP completo para a industria de odontologia, utlizando NestJs para a API  e front em NextJs",
+                link: "",
                 status: "dev",
             },
+            {
+                name: "WooviChallenge",
+                description: "Resolucao dos desafios propostos pela fintech Woovi",
+                link: "",
+                github: "",
+                status: "dev",
+            },
+          
         ],
         // status color and text
         getStatus: (status: string) => {
