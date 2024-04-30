@@ -16,7 +16,7 @@ const DrawBack = () => {
                         router.back()
                     }}>
                         <ArrowLeft size={16}/>
-                        <span className={'ml-2'}>Go Back</span>
+                        <span className={'ml-2'}>Voltar</span>
                     </Button>
                 </div>
             </div>
@@ -28,7 +28,7 @@ const DrawBack = () => {
             >
                 <div className={'flex items-center'}>
                     <ArrowLeft size={16}/>
-                    <span className={'ml-2'}>Go Back</span>
+                    <span className={'ml-2'}>Voltar</span>
                 </div>
             </div>
         </>
