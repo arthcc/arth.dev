@@ -70,6 +70,7 @@ const siteData: any = {
                 name: "DentalDash",
                 description: "UM ERP completo para a industria de odontologia, utlizando NestJs para a API  e front em NextJs",
                 link: "",
+                github: "https://github.com/DentalDash/dental-dash",
                 status: "dev",
             },
             {
@@ -78,6 +79,14 @@ const siteData: any = {
                 link: "",
                 github: "",
                 status: "dev",
+            },
+            {
+                name: "TrilhaInfo",
+                description: "Projeto OpenSource que participo com o objetivo de agregar e organizar conteúdos gratuitos em português para pessoas que querem ingressar na área de Tecnologia.",
+                link: "https://trilha.info/",
+                github: "https://github.com/flaviojmendes/trilhainfo",
+                status: "active",
+                 
             },
           
         ],
