@@ -31,7 +31,7 @@ const siteData: any = {
 
             {
                 name: 'Currículo',
-                value: 'https://drive.google.com/file/d/1QPnp7UNJG0mgc-JLTGCvz61p6UN_FtHo/view?usp=sharing'
+                value: 'https://drive.google.com/file/d/1YbcHMeh38EfN0zeTZX1J2DKFDgiyWgcn/view?usp=sharing'
             }
         ]
     },
