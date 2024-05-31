@@ -1,0 +1,86 @@
+---
+title: " #3: O que é hash e salt? E como aplicar em aplicações NodeJs"
+summary: "Aplicações de Segurança no Desenvolvimento de um Software"
+date: 2024-05-28
+tags: ["security", "learn in public", "blog"]
+draft: false
+---
+# Aplicações de Segurança no Desenvolvimento de um Software
+
+Estou desenvolvendo um ERP completo para a área de Odontologia, onde posso aprimorar meus conhecimentos e aplicá-los em um projeto profissional real. Durante este período, estou utilizando o NestJs para criar os primeiros endpoints, incluindo um para login. Aprendi mais sobre como armazenar senhas em banco de dados e protegê-las usando Hash e Salt.
+
+## O que é Hash?
+<img src="https://media.licdn.com/dms/image/D4D12AQGO0Au6bEEdBA/article-cover_image-shrink_600_2000/0/1703000592497?e=2147483647&v=beta&t=ucABIeBTLqoaPpi-PlVwnSNaWrxR1AGbHkzx6H4SyrE" alt="Hash"/>
+
+Em resumo, o hash pode ser considerado como uma função matemática que transforma qualquer arquivo ou conjunto de caracteres em uma sequência única de letras e números. Uma vez que o hash é gerado, ele nunca mais pode ser alterado. Ele segue o padrão de ter o mesmo tamanho (entre 128 e 512 bits) e o mesmo número de caracteres alfanuméricos.
+
+Uma função hash é unidirecional, semelhante a uma função sobrejetiva, onde a imagem é igual ao contradomínio. Um hash pode ser quebrado de várias maneiras por meio de ataques de força bruta ou dicionário.
+
+### Como Funciona uma Função Hash?
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/1200px-Cryptographic_Hash_Function.svg.png" alt="Hash Function"/>
+
+Uma função hash é muito mais complexa do que se imagina. Após a criação do hash, que é uma sequência de bits gerada por algoritmos de informação, várias informações são transformadas em pequenas quantidades de dados. Uma função hash requer considerações adicionais, e a geração de um salt também exige atenção extra.
+
+### O Salt e sua Funcionalidade
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20220823185238/saltedpasswordhashing.jpg" alt="Salt"/>
+O salt é a adição de caracteres, palavras, termos ou mesmo números que introduzem certa aleatoriedade nos algoritmos e tornam-nos mais difíceis de decifrar. Geralmente, são adicionados antes da criptografia e podem ser fixos ou aleatórios. Um exemplo seria o seguinte:
+
+- Para a senha `123456`:
+  - Hash: `213465`
+  - Hash + Salt: `213465654321A!&**`
+
+- Para a senha `senha123`:
+  - Hash: `1a2b3c`
+  - Hash + Salt: `1a2b3cxyz987$%`
+
+- Para a senha `segredo456`:
+  - Hash: `987zyx`
+  - Hash + Salt: `987zyx!&*abc123`
+
+- Para a senha `minhasenha`:
+  - Hash: `senha123`
+  - Hash + Salt: `senha123ABCD!@#`
+
+
+A criação de um salt e a implementação de uma função hash levam em consideração muitos fatores, mas o objetivo é aumentar a complexidade, especialmente porque bancos de dados de hashes de senhas comuns são amplamente conhecidos e isso compromete a segurança de aplicativos.
+
+### Como Está Sendo Aplicado na Prática?
+
+Estou utilizando a biblioteca bcrypt no NestJs, que tem a função de criar todos os hashes e salts já em funções próprias, o que facilita o trabalho e garante que a mesma siga todos os padrões de segurança.
+
+Para instalar a lib e utilizá-la no NestJs:
+
+```
+$ npm i bcrypt
+$ npm i -D @types/bcrypt
+```
+
+Seguindo o exemplo da documentação você pode usar a função ```hash``` da seguinte forma:
+
+```
+import * as bcrypt from 'bcrypt';
+
+const saltOrRounds = 10;
+const password = 'random_password';
+const salt = bcrypt.genSaltSync(saltRounds)
+const hash = bcrypt.hashSync(password, salt)
+
+```
+
+Onde ```saltOrRounds``` define o valor de caracteres
+```password``` é a senha a ser criptografada
+com isso passamos  ```saltRound``` como parâmetros da função  ```genSaltSync``` que é responsável pela criação do salt, a pós isso
+passamos na função ```hashtSync```a senha e o salt criado.
+
+Dando ```console.log(hash)``` já vamos ter a combinação que foi criada.
+
+###  Referências
+
+A documentação da lib se encontra em: [https://www.npmjs.com/package/bcrypt](https://www.npmjs.com/package/bcrypt) para mais funcionalidades.
+
+Achou este artigo interessante? Você também encontra outros na aba **"Artigos"**.
+
+#### Quer conversar comigo? Encontre-me no [LinkedIn](https://www.linkedin.com/in/arthcc/) ou no [GitHub](https://github.com/arthcc)
+
+*Bom desenvolvimento!*
