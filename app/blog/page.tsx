@@ -43,7 +43,7 @@ const Blog = () => {
                         <Card className={'col-span-1 border-none shadow-none'} key={index}>
                           <CardHeader className={'pl-0'}>
                             <div className={'flex items-center space-x-4'}>
-                              <Time date={post.time}/>
+                              <Time date={post.date}/>
                               <div className={'hidden md:block ml-4 space-x-1'}>
                                   {post.tags.map((tag: string, index: number) => (
                                       <Badge key={index} variant={'secondary'}>
