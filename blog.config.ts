@@ -46,7 +46,7 @@ const siteData: any = {
     socials: {
       email: "arthurdaconceicaocunha@gmail.com",
       github: "https://github.com/arthcc",
-      linkedin: "linkedin.com/in/arthcc",
+      linkedin: "https://linkedin.com/in/arthcc",
       facebook: "",
       instagram: "",
       youtube: "",
